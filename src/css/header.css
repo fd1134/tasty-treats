@@ -9,6 +9,9 @@
   display: flex;
   gap:10px;
 }
+.nav-link-active{
+  color:  #9BB537;
+}
 .header-icons{
   display: flex;
   justify-content: center;
@@ -84,7 +87,124 @@
     line-height: calc(20/18);
     letter-spacing: -0.72px;
     display: block;
+  }
 
+  .mobile-menu{
+    
+      background-color:  #9BB537;
+      height:100vh;
+      width: 100vw;
+      position: fixed;
+      z-index: 999;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease-in-out;    
+  
+  }
+  .mobile-menu.open {
+    transform: translateX(0);
+}
+.mob-menu-btn-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+.mob-menu-btn-close .mob-menu-close {
+  transition: transform 0.3s ease-in-out;
+}
+.mob-menu-btn-close:hover {
+  transform: rotate(45deg);
+}
+.mob-menu-btn-close:hover .mob-menu-close {
+  transform: scale(1.2);
+}
+
+.mob-menu-close-icon{
+  stroke: white;
+}
+
+.mob-menu-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding-top: 200px;
+  padding-bottom: 566px;
+}
+
+.header-list-item .main-page{
+  color: #FFF;
+  font-size: 12px;
+  font-weight: 500;
+  justify-content: center;
+}
+
+.header-list-item{
+  color:#FFF;
+  font-size: 12px;
+  font-weight: 500;
+  justify-content: center;
+}
+
+
+.mob-menu-btn-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+.switch {
+  position: absolute;
+  width: 46px;
+  height: 20px;
+  bottom: 30px;
+  left: 20px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #CECDCD;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  left: 4px;
+  bottom: 3px;
+  background-color: #F8F8F8;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked+.slider {
+  background: #9BB537;
+}
+
+input:checked+.slider:before {
+  transform: translateX(26px);
+  box-shadow: 4px 4px 15px rgba(243, 243, 243, 0.25);
 }
 /* 768px ve üzeri - Tabletler için düzen */
 @media only screen and (min-width: 768px) {
