@@ -1,44 +1,98 @@
-.header {
-  padding: 20px 0;
-}
-.nav {
+.header-items{
   display: flex;
-  justify-content: space-between;
+  justify-content:space-between;
 }
-.nav-logo {
-  display: inline-flex;
-  align-items: center;
+.nav{
+  display: none;
+}
+.nav-list{
+  display: flex;
+  gap:10px;
+}
+.header-icons{
+  display: flex;
   justify-content: center;
-}
-.nav-list {
-  display: flex;
   align-items: center;
-  justify-content: flex-end;
-  gap: 40px;
+  gap:10px
 }
-.nav-link {
-  position: relative;
-  display: block;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  transition: 200ms ease-in;
+.logo-first{
+  color: #9BB537;
 }
-.nav-link:hover,
-.nav-link:focus {
-  color: #747bff;
+.logo-second{
+  color:#050505;
 }
-.nav-link::after {
-  content: '';
+
+.shopping-icon-use{
+  fill: #F8F8F8;
+  stroke:  #050505;
+}
+.header-switch-container{
+  display: none;
+}
+.checkbox{
+  appearance: none;
+  outline: none;
+}
+.header-switch {  
+    position: relative;
+    display: flex;
+    width: 47px;
+    height: 20px;
+    border-radius: 10px;
+    box-shadow: 7px 5px 15px 0px #A09EA066;
+  
+}
+.header-slider {
   position: absolute;
+  cursor: pointer;  
+  top: 0;
+  left: 0;
+  right: 0;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%) translateY(100%);
-  width: 110%;
-  height: 4px;
-  border-radius: 4px;
-  transform-origin: center;
-  animation: stretch 400ms cubic-bezier(0.68, -0.55, 0.27, 1.55) 200ms both;
+  background-color:gray;
+  transition: 0.4s;
+  border-radius: 34px;
+  box-shadow: 4px 4px 15px rgba(243, 243, 243, 0.25);
 }
-.nav-link.active::after {
-  background: #747bff;
+
+.header-slider:before {
+  position: absolute;
+  content: "";
+  height: 17px;
+  width: 17px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: 0.4s; 
+  border-radius: 50%;
+}
+
+.header-switch input:checked + .header-slider {
+  background: linear-gradient(#9BB537, #9BB537);
+  box-shadow: 4px 4px 15px rgba(243, 243, 243, 0.25);
+}
+
+.header-switch input:checked + .header-slider:before {
+  box-shadow: 4px 4px 15px rgba(243, 243, 243, 0.25);
+  transform: translateX(26px);
+}
+
+.mobile-icon{
+  fill: #F8F8F8;
+  stroke:  #050505; 
+    font-size: 18px;
+    line-height: calc(20/18);
+    letter-spacing: -0.72px;
+    display: block;
+
+}
+/* 768px ve üzeri - Tabletler için düzen */
+@media only screen and (min-width: 768px) {
+  .mobile-icon{
+    display: none;
+  }
+  .nav, .header-switch-container{
+    display: block;
+  }
+
 }
