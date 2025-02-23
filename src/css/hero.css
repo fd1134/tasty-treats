@@ -1,0 +1,10 @@
+.hero{
+    margin-top: 100px;
+   
+}
+
+.hero-img{
+    display: flex;
+    gap: 10px;
+    overflow: hidden;
+}
